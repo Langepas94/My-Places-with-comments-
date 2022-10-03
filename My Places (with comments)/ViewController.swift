@@ -3,17 +3,17 @@
 //  My Places (with comments)
 //
 //  Created by Артём Тюрморезов on 01.10.2022.
-//
+//a
 
 import UIKit
 
 class ViewController: UIViewController {
-
     let restorantName = ["Шпинат", "SoSo coffee", "Rustaveli", "Персонажи", "Чито Гврито", "Colba Coffee"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Мои рестораны"
+        setupTitleOfNavigationController()
+
     }
 }
 
@@ -28,6 +28,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         var cellConfig = cell?.defaultContentConfiguration()
         cellConfig?.text = restorantName[indexPath.row]
+        cellConfig?.textProperties.font = UIFont(name: "AlNile", size: 15)!
         cellConfig?.image = UIImage(named: restorantName[indexPath.row])
         cell?.contentConfiguration = cellConfig
         return cell!
@@ -38,4 +39,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return size
     }
     
+}
+
+// MARK: - Navigation title
+extension ViewController {
+    func setupTitleOfNavigationController() {
+        let titleLabel = UILabel()
+
+
+                let titleText = NSAttributedString(string: "Мои рестораны", attributes: [
+                    NSAttributedString.Key.font : UIFont(name: "SnellRoundhand-Black", size: 20) as Any])
+
+                titleLabel.attributedText = titleText
+                titleLabel.sizeToFit()
+                navigationItem.titleView = titleLabel
+    }
 }
