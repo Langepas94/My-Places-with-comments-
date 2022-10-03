@@ -25,13 +25,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        var cellConfig = cell?.defaultContentConfiguration()
-        cellConfig?.text = restorantName[indexPath.row]
-        cellConfig?.textProperties.font = UIFont(name: "AlNile", size: 15)!
-        cellConfig?.image = UIImage(named: restorantName[indexPath.row])
-        cell?.contentConfiguration = cellConfig
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
+        var cellConfig = cell.defaultContentConfiguration()
+       cellConfig.text = restorantName[indexPath.row]
+        cellConfig.textProperties.font = UIFont(name: "AlNile", size: 18)!
+        cellConfig.image = UIImage(named: restorantName[indexPath.row])
+        cellConfig.imageProperties.cornerRadius = cell.frame.size.height
+        cell.contentConfiguration = cellConfig
+        cell.imageView?.clipsToBounds = true
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -46,9 +48,8 @@ extension ViewController {
     func setupTitleOfNavigationController() {
         let titleLabel = UILabel()
 
-
                 let titleText = NSAttributedString(string: "Мои рестораны", attributes: [
-                    NSAttributedString.Key.font : UIFont(name: "SnellRoundhand-Black", size: 20) as Any])
+                    NSAttributedString.Key.font : UIFont(name: "Avenir-Heavy", size: 25) as Any])
 
                 titleLabel.attributedText = titleText
                 titleLabel.sizeToFit()
