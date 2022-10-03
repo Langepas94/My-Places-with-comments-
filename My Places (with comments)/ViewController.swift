@@ -9,24 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let restorantName = ["Шпинат", "SoSo coffee", "Rustaveli", "Персонажи", "Чито Гврито", "Colba Coffee"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
-
-
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return restorantName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = "Cell"
+        var cellConfig = cell?.defaultContentConfiguration()
+        cellConfig?.text = restorantName[indexPath.row]
+        cellConfig?.image = UIImage(named: restorantName[indexPath.row])
+        cell?.contentConfiguration = cellConfig
         return cell!
     }
-    
-    
 }
