@@ -26,13 +26,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
-        var cellConfig = cell.defaultContentConfiguration()
-       cellConfig.text = restorantName[indexPath.row]
-        cellConfig.textProperties.font = UIFont(name: "AlNile", size: 18)!
-        cellConfig.image = UIImage(named: restorantName[indexPath.row])
-        cellConfig.imageProperties.cornerRadius = cell.frame.size.height
-        cell.contentConfiguration = cellConfig
-        cell.imageView?.clipsToBounds = true
+     
+        cell.nameLabel.text = restorantName[indexPath.row]
+        cell.imageOfPlace.image = UIImage(named: restorantName[indexPath.row])
+        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace.clipsToBounds = true
+
         return cell
     }
     
