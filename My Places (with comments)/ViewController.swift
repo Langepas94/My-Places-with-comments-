@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Мои рестораны"
     }
 }
 
@@ -32,4 +32,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell?.contentConfiguration = cellConfig
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let size = CGFloat(80)
+        return size
+    }
+    
 }
