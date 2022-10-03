@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let restorantName = ["Шпинат", "SoSo coffee", "Rustaveli", "Персонажи", "Чито Гврито", "Colba Coffee"]
-    
+
+    let places = Place.getPlace()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTitleOfNavigationController()
@@ -21,14 +21,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restorantName.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
      
-        cell.nameLabel.text = restorantName[indexPath.row]
-        cell.imageOfPlace.image = UIImage(named: restorantName[indexPath.row])
+        cell.nameLabel.text = places[indexPath.row].name
+        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].image)
+        cell.TypeLabel.text = places[indexPath.row].type
+        cell.LocationLabel.text = places[indexPath.row].place
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
 

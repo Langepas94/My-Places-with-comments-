@@ -14,6 +14,7 @@
 		4406F1FF28E81FB00050F159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4406F1FE28E81FB00050F159 /* Assets.xcassets */; };
 		4406F20228E81FB00050F159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4406F20028E81FB00050F159 /* LaunchScreen.storyboard */; };
 		44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD628EB2DD30082A693 /* CustomTableCell.swift */; };
+		44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD828EB3F320082A693 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4406F20128E81FB00050F159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4406F20328E81FB00050F159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D37AD628EB2DD30082A693 /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		44D37AD828EB3F320082A693 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				4406F1F528E81FAF0050F159 /* AppDelegate.swift */,
 				4406F1F728E81FAF0050F159 /* SceneDelegate.swift */,
 				4406F1F928E81FAF0050F159 /* ViewController.swift */,
+				44D37AD828EB3F320082A693 /* PlaceModel.swift */,
 				4406F1FB28E81FAF0050F159 /* Main.storyboard */,
 				44D37AD628EB2DD30082A693 /* CustomTableCell.swift */,
 				4406F1FE28E81FB00050F159 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				4406F1FA28E81FAF0050F159 /* ViewController.swift in Sources */,
 				4406F1F628E81FAF0050F159 /* AppDelegate.swift in Sources */,
+				44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */,
 				4406F1F828E81FAF0050F159 /* SceneDelegate.swift in Sources */,
 				44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */,
 			);
