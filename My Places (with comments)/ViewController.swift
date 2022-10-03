@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         setupTitleOfNavigationController()
 
     }
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {
+        
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
