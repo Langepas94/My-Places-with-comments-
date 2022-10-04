@@ -8,31 +8,43 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let restorantName = ["Шпинат", "SoSo coffee", "Rustaveli", "Персонажи", "Чито Гврито", "Colba Coffee"]
-    
+
+    var places = Place.getPlace()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTitleOfNavigationController()
 
     }
+
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restorantName.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
-        var cellConfig = cell.defaultContentConfiguration()
-       cellConfig.text = restorantName[indexPath.row]
-        cellConfig.textProperties.font = UIFont(name: "AlNile", size: 18)!
-        cellConfig.image = UIImage(named: restorantName[indexPath.row])
-        cellConfig.imageProperties.cornerRadius = cell.frame.size.height
-        cell.contentConfiguration = cellConfig
-        cell.imageView?.clipsToBounds = true
+     
+        let place = places[indexPath.row]
+        
+        cell.nameLabel.text = place.name
+       
+        cell.TypeLabel.text = place.type
+        cell.LocationLabel.text = place.place
+        
+        if place.image == nil {
+            cell.imageOfPlace.image = UIImage(named: place.restorantImage!)
+        } else {
+            cell.imageOfPlace.image = place.image
+        }
+        
+//        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].restorantImage!)
+        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
+        cell.imageOfPlace.clipsToBounds = true
+
         return cell
     }
     
@@ -56,3 +68,15 @@ extension ViewController {
                 navigationItem.titleView = titleLabel
     }
 }
+
+
+extension ViewController {
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newPlaceVc = segue.source as? NewPlaceTableViewController else { return }
+        newPlaceVc.saveNewPlace()
+        places.append(newPlaceVc.newPlace!)
+    }
+}
+
+
+

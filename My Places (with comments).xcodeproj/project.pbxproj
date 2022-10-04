@@ -13,7 +13,15 @@
 		4406F1FD28E81FAF0050F159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4406F1FB28E81FAF0050F159 /* Main.storyboard */; };
 		4406F1FF28E81FB00050F159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4406F1FE28E81FB00050F159 /* Assets.xcassets */; };
 		4406F20228E81FB00050F159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4406F20028E81FB00050F159 /* LaunchScreen.storyboard */; };
+		446DAE7328EC58FF003062A2 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DAE7228EC58FF003062A2 /* MainTableViewController.swift */; };
+		446DAE7628EC7189003062A2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7528EC7189003062A2 /* libc++.tbd */; };
+		446DAE7828EC7192003062A2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7728EC7192003062A2 /* libz.tbd */; };
+		446DAE7A28EC719B003062A2 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7928EC719B003062A2 /* libcompression.tbd */; };
+		446DAE7D28EC72C9003062A2 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7B28EC72C9003062A2 /* Realm.xcframework */; };
+		446DAE7E28EC72C9003062A2 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */; };
+		44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */; };
 		44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD628EB2DD30082A693 /* CustomTableCell.swift */; };
+		44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD828EB3F320082A693 /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +33,15 @@
 		4406F1FE28E81FB00050F159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4406F20128E81FB00050F159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4406F20328E81FB00050F159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		446DAE7228EC58FF003062A2 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		446DAE7528EC7189003062A2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		446DAE7728EC7192003062A2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		446DAE7928EC719B003062A2 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
+		446DAE7B28EC72C9003062A2 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Realm.xcframework; sourceTree = "<group>"; };
+		446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RealmSwift.xcframework; sourceTree = "<group>"; };
+		44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
 		44D37AD628EB2DD30082A693 /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		44D37AD828EB3F320082A693 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446DAE7A28EC719B003062A2 /* libcompression.tbd in Frameworks */,
+				446DAE7D28EC72C9003062A2 /* Realm.xcframework in Frameworks */,
+				446DAE7E28EC72C9003062A2 /* RealmSwift.xcframework in Frameworks */,
+				446DAE7828EC7192003062A2 /* libz.tbd in Frameworks */,
+				446DAE7628EC7189003062A2 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +65,7 @@
 			children = (
 				4406F1F428E81FAF0050F159 /* My Places (with comments) */,
 				4406F1F328E81FAF0050F159 /* Products */,
+				446DAE7428EC7189003062A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +83,9 @@
 				4406F1F528E81FAF0050F159 /* AppDelegate.swift */,
 				4406F1F728E81FAF0050F159 /* SceneDelegate.swift */,
 				4406F1F928E81FAF0050F159 /* ViewController.swift */,
+				446DAE7228EC58FF003062A2 /* MainTableViewController.swift */,
+				44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */,
+				44D37AD828EB3F320082A693 /* PlaceModel.swift */,
 				4406F1FB28E81FAF0050F159 /* Main.storyboard */,
 				44D37AD628EB2DD30082A693 /* CustomTableCell.swift */,
 				4406F1FE28E81FB00050F159 /* Assets.xcassets */,
@@ -68,6 +93,18 @@
 				4406F20328E81FB00050F159 /* Info.plist */,
 			);
 			path = "My Places (with comments)";
+			sourceTree = "<group>";
+		};
+		446DAE7428EC7189003062A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				446DAE7928EC719B003062A2 /* libcompression.tbd */,
+				446DAE7728EC7192003062A2 /* libz.tbd */,
+				446DAE7528EC7189003062A2 /* libc++.tbd */,
+				446DAE7B28EC72C9003062A2 /* Realm.xcframework */,
+				446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */,
 				4406F1FA28E81FAF0050F159 /* ViewController.swift in Sources */,
 				4406F1F628E81FAF0050F159 /* AppDelegate.swift in Sources */,
+				44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */,
 				4406F1F828E81FAF0050F159 /* SceneDelegate.swift in Sources */,
 				44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */,
+				446DAE7328EC58FF003062A2 /* MainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +331,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q7D95C8V9R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "My Places (with comments)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "My places";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,8 +360,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q7D95C8V9R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "My Places (with comments)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "My places";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
