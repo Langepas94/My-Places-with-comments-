@@ -7,6 +7,7 @@
 
 
 import UIKit
+import RealmSwift
 
 struct Place {
     var name: String
