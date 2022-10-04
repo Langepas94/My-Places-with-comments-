@@ -13,7 +13,7 @@ struct Place {
     var type: String
     var image: String
     static let restorantName = ["Шпинат", "SoSo coffee", "Rustaveli", "Персонажи", "Чито Гврито", "Colba Coffee"]
-    
+    // MARK: - Просто функция чтобы не писать вручную стартовый массив данных
     static func getPlace() -> [Place] {
         var places = [Place]()
         for place in restorantName {

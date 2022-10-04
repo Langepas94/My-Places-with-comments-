@@ -266,6 +266,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="sjl-6U-4bH"/>
                     </navigationItem>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageOfPlace" destination="wvk-pm-TBg" id="gDP-gp-OCh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m2-zN-YYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="X1q-SH-iit" userLabel="Exit" sceneMemberID="exit"/>
