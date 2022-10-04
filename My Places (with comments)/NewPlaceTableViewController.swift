@@ -21,13 +21,21 @@ class NewPlaceTableViewController: UITableViewController {
         
         // MARK: - Если ячейка 0 индекс то выбрать фото, если нет то ничего
         if indexPath.row == 0 {
+            
+            let cameraPic = UIImage(imageLiteralResourceName: "camera")
+        
+            let photoPic = UIImage(imageLiteralResourceName: "photo")
             let action = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let camera = UIAlertAction(title: "Camera", style: .default) { _ in
                 self.setImage(source: .camera)
             }
+            camera.setValue(cameraPic, forKey: "image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             let photo = UIAlertAction(title: "Photo", style: .default) { _ in
                 self.setImage(source: .photoLibrary)
             }
+            photo.setValue(photoPic, forKey: "image")
+            photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
             
             action.addAction(camera)
