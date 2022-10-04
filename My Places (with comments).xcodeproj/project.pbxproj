@@ -13,6 +13,7 @@
 		4406F1FD28E81FAF0050F159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4406F1FB28E81FAF0050F159 /* Main.storyboard */; };
 		4406F1FF28E81FB00050F159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4406F1FE28E81FB00050F159 /* Assets.xcassets */; };
 		4406F20228E81FB00050F159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4406F20028E81FB00050F159 /* LaunchScreen.storyboard */; };
+		446DAE7328EC58FF003062A2 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DAE7228EC58FF003062A2 /* MainTableViewController.swift */; };
 		44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */; };
 		44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD628EB2DD30082A693 /* CustomTableCell.swift */; };
 		44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD828EB3F320082A693 /* PlaceModel.swift */; };
@@ -27,6 +28,7 @@
 		4406F1FE28E81FB00050F159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4406F20128E81FB00050F159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4406F20328E81FB00050F159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		446DAE7228EC58FF003062A2 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
 		44D37AD628EB2DD30082A693 /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 		44D37AD828EB3F320082A693 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				4406F1F528E81FAF0050F159 /* AppDelegate.swift */,
 				4406F1F728E81FAF0050F159 /* SceneDelegate.swift */,
 				4406F1F928E81FAF0050F159 /* ViewController.swift */,
+				446DAE7228EC58FF003062A2 /* MainTableViewController.swift */,
 				44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */,
 				44D37AD828EB3F320082A693 /* PlaceModel.swift */,
 				4406F1FB28E81FAF0050F159 /* Main.storyboard */,
@@ -153,6 +156,7 @@
 				44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */,
 				4406F1F828E81FAF0050F159 /* SceneDelegate.swift in Sources */,
 				44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */,
+				446DAE7328EC58FF003062A2 /* MainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

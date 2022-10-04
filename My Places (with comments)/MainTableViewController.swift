@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  MainTableViewController.swift
 //  My Places (with comments)
 //
-//  Created by Артём Тюрморезов on 01.10.2022.
-//a
+//  Created by Артём Тюрморезов on 04.10.2022.
+//
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainTableViewController: UITableViewController {
 
     var places = Place.getPlace()
     override func viewDidLoad() {
@@ -15,17 +15,11 @@ class ViewController: UIViewController {
         setupTitleOfNavigationController()
 
     }
-
-}
-
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
      
         let place = places[indexPath.row]
@@ -48,15 +42,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let size = CGFloat(80)
         return size
     }
-    
-}
-
-// MARK: - Navigation title
-extension ViewController {
     func setupTitleOfNavigationController() {
         let titleLabel = UILabel()
 
@@ -67,16 +56,11 @@ extension ViewController {
                 titleLabel.sizeToFit()
                 navigationItem.titleView = titleLabel
     }
-}
-
-
-extension ViewController {
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVc = segue.source as? NewPlaceTableViewController else { return }
         newPlaceVc.saveNewPlace()
         places.append(newPlaceVc.newPlace!)
+        tableView.reloadData()
     }
 }
-
-
 
