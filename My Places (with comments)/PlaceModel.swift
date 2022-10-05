@@ -7,22 +7,24 @@
 
 
 import UIKit
+import RealmSwift
 
-struct Place {
-    var name: String
-    var place: String?
-    var type: String?
-    var image: UIImage?
-    var restorantImage: String?
-    static let restorantName = ["Шпинат", "SoSo coffee", "Rustaveli", "Персонажи", "Чито Гврито", "Colba Coffee"]
-    // MARK: - Просто функция чтобы не писать вручную стартовый массив данных
-    static func getPlace() -> [Place] {
-        var places = [Place]()
-        for place in restorantName {
-            places.append(Place(name: place, place: "Волгоград", type: "Ресторан", image: nil, restorantImage: place))
-        }
-        return places
+class Place: Object {
+    @Persisted var name = ""
+    @Persisted var location: String?
+    @Persisted var type: String?
+    @Persisted var imageData: Data?
+    
+    convenience init(name: String, location: String?, type: String?, imageData: Data?) {
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageData = imageData
+        
     }
+    
+    
 }
 
 

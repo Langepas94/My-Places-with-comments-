@@ -7,16 +7,20 @@
 
 import UIKit
 import RealmSwift
+
+
 class MainTableViewController: UITableViewController {
 
-    var places = Place.getPlace()
+    var places: Results<Place>!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTitleOfNavigationController()
 
+        places = realm.objects(Place.self)
+        
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places.count
+        return places.isEmpty ? 0 : places.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,13 +31,9 @@ class MainTableViewController: UITableViewController {
         cell.nameLabel.text = place.name
        
         cell.TypeLabel.text = place.type
-        cell.LocationLabel.text = place.place
-        
-        if place.image == nil {
-            cell.imageOfPlace.image = UIImage(named: place.restorantImage!)
-        } else {
-            cell.imageOfPlace.image = place.image
-        }
+        cell.LocationLabel.text = place.location
+        cell.imageOfPlace.image = UIImage(data: place.imageData!)
+
         
 //        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].restorantImage!)
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
@@ -41,6 +41,18 @@ class MainTableViewController: UITableViewController {
 
         return cell
     }
+    
+  
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let place = places[indexPath.row]
+            StorageManager.deleteObject(place)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
+    
+  
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let size = CGFloat(80)
@@ -59,7 +71,7 @@ class MainTableViewController: UITableViewController {
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVc = segue.source as? NewPlaceTableViewController else { return }
         newPlaceVc.saveNewPlace()
-        places.append(newPlaceVc.newPlace!)
+//        places.append(newPlaceVc.newPlace!)
         tableView.reloadData()
     }
 }

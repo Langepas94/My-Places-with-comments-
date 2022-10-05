@@ -19,6 +19,7 @@
 		446DAE7A28EC719B003062A2 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7928EC719B003062A2 /* libcompression.tbd */; };
 		446DAE7D28EC72C9003062A2 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7B28EC72C9003062A2 /* Realm.xcframework */; };
 		446DAE7E28EC72C9003062A2 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */; };
+		446DAE8028EC8FC3003062A2 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DAE7F28EC8FC3003062A2 /* StorageManager.swift */; };
 		44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */; };
 		44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD628EB2DD30082A693 /* CustomTableCell.swift */; };
 		44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD828EB3F320082A693 /* PlaceModel.swift */; };
@@ -39,6 +40,7 @@
 		446DAE7928EC719B003062A2 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		446DAE7B28EC72C9003062A2 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Realm.xcframework; sourceTree = "<group>"; };
 		446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RealmSwift.xcframework; sourceTree = "<group>"; };
+		446DAE7F28EC8FC3003062A2 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
 		44D37AD628EB2DD30082A693 /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 		44D37AD828EB3F320082A693 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		4406F1F428E81FAF0050F159 /* My Places (with comments) */ = {
 			isa = PBXGroup;
 			children = (
+				446DAE7F28EC8FC3003062A2 /* StorageManager.swift */,
 				4406F1F528E81FAF0050F159 /* AppDelegate.swift */,
 				4406F1F728E81FAF0050F159 /* SceneDelegate.swift */,
 				4406F1F928E81FAF0050F159 /* ViewController.swift */,
@@ -185,6 +188,7 @@
 				4406F1F828E81FAF0050F159 /* SceneDelegate.swift in Sources */,
 				44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */,
 				446DAE7328EC58FF003062A2 /* MainTableViewController.swift in Sources */,
+				446DAE8028EC8FC3003062A2 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
