@@ -70,9 +70,18 @@ class MainTableViewController: UITableViewController {
     }
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVc = segue.source as? NewPlaceTableViewController else { return }
-        newPlaceVc.saveNewPlace()
+        newPlaceVc.savePlace()
 //        places.append(newPlaceVc.newPlace!)
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let place = places[indexPath.row]
+            let newPlaceVc = segue.destination as! NewPlaceTableViewController
+            newPlaceVc.currentPlace = place
+        }
     }
 }
 

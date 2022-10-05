@@ -8,7 +8,7 @@
 import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
-   
+    var currentPlace: Place?
     var imageIsChanged = false
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
@@ -20,8 +20,12 @@ class NewPlaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
+        setupEditScreen()
+        setupNavigationBar()
+        setupLabelOfNavigationController()
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
@@ -57,7 +61,7 @@ class NewPlaceTableViewController: UITableViewController {
         }
     }
     
-    func saveNewPlace() {
+    func savePlace() {
         
        
         
@@ -71,8 +75,17 @@ class NewPlaceTableViewController: UITableViewController {
         let imageData = image?.pngData()
         
         let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData)
+        if currentPlace != nil{
+            try! realm.write {
+                currentPlace?.name = newPlace.name
+                currentPlace?.location = newPlace.location
+                currentPlace?.type = newPlace.type
+                currentPlace?.imageData = newPlace.imageData
+            }
+        } else {
+            StorageManager.saveObject(newPlace)
+        }
         
-        StorageManager.saveObject(newPlace)
         
     }
     
@@ -121,3 +134,40 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
         dismiss(animated: true)
     }
 }
+
+extension NewPlaceTableViewController {
+    private func setupEditScreen() {
+        if currentPlace != nil {
+            imageIsChanged = true
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
+            
+            placeImage.image = image
+            placeImage.contentMode = .scaleAspectFill
+            placeType.text = currentPlace?.type
+            placeName.text = currentPlace?.name
+            placeLocation.text = currentPlace?.location
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
+        
+        
+        navigationItem.leftBarButtonItem = nil
+        
+        saveButton.isEnabled = true
+    }
+    func setupLabelOfNavigationController() {
+        let titleLabel = UILabel()
+        let titleText = NSAttributedString(string: currentPlace?.name ?? "Мои рестораны", attributes: [
+            NSAttributedString.Key.font : UIFont(name: "Avenir-Heavy", size: 25) as Any])
+        
+        titleLabel.attributedText = titleText
+        titleLabel.sizeToFit()
+        navigationItem.titleView = titleLabel
+    }
+}
+
+
