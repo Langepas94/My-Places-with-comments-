@@ -287,8 +287,11 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="39"/>
                                 <segments>
                                     <segment title="Дата"/>
-                                    <segment title="Имя"/>
+                                    <segment title="Название"/>
                                 </segments>
+                                <connections>
+                                    <action selector="sortingAction:" destination="kK6-3M-z2t" eventType="valueChanged" id="NGf-oN-5QY"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vAM-FI-7UO"/>
@@ -301,7 +304,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g27-mN-zfc">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="cVV-X0-bN5"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="cVV-X0-bN5">
+                            <connections>
+                                <action selector="reversingSorting:" destination="kK6-3M-z2t" id="Wvq-mq-BGV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qed-fp-aiR">
                             <connections>
                                 <segue destination="Xcz-lO-akn" kind="presentation" id="DO3-GK-6ZT"/>
@@ -309,6 +316,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reverseLeftBarButtonItem" destination="cVV-X0-bN5" id="v1c-Xv-Y15"/>
+                        <outlet property="segmentedControl" destination="oDp-1v-iY1" id="p2l-qD-Art"/>
                         <outlet property="tableView" destination="9m0-mA-BwH" id="vyF-Kf-d3x"/>
                     </connections>
                 </viewController>
