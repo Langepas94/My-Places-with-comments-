@@ -22,6 +22,7 @@
 		446DAE7E28EC72C9003062A2 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */; };
 		446DAE8028EC8FC3003062A2 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DAE7F28EC8FC3003062A2 /* StorageManager.swift */; };
 		4476DCC628EF50D300BCD87E /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 4476DCC528EF50D300BCD87E /* Cosmos */; };
+		4476DCC828EF5C9500BCD87E /* MapVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4476DCC728EF5C9500BCD87E /* MapVCViewController.swift */; };
 		44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */; };
 		44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD628EB2DD30082A693 /* CustomTableCell.swift */; };
 		44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD828EB3F320082A693 /* PlaceModel.swift */; };
@@ -44,6 +45,7 @@
 		446DAE7B28EC72C9003062A2 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Realm.xcframework; sourceTree = "<group>"; };
 		446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RealmSwift.xcframework; sourceTree = "<group>"; };
 		446DAE7F28EC8FC3003062A2 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		4476DCC728EF5C9500BCD87E /* MapVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVCViewController.swift; sourceTree = "<group>"; };
 		44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
 		44D37AD628EB2DD30082A693 /* CustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 		44D37AD828EB3F320082A693 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				4406F1F928E81FAF0050F159 /* ViewController.swift */,
 				446DAE7228EC58FF003062A2 /* MainTableViewController.swift */,
 				44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */,
+				4476DCC728EF5C9500BCD87E /* MapVCViewController.swift */,
 				44D37AD828EB3F320082A693 /* PlaceModel.swift */,
 				4406F1FB28E81FAF0050F159 /* Main.storyboard */,
 				44D37AD628EB2DD30082A693 /* CustomTableCell.swift */,
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4476DCC828EF5C9500BCD87E /* MapVCViewController.swift in Sources */,
 				44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */,
 				4406F1FA28E81FAF0050F159 /* ViewController.swift in Sources */,
 				4406F1F628E81FAF0050F159 /* AppDelegate.swift in Sources */,
