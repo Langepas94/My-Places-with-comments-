@@ -9,21 +9,25 @@ import UIKit
 import RealmSwift
 
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var places: Results<Place>!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTitleOfNavigationController()
 
         places = realm.objects(Place.self)
         
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.isEmpty ? 0 : places.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
      
         let place = places[indexPath.row]
@@ -43,7 +47,7 @@ class MainTableViewController: UITableViewController {
     }
     
   
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let place = places[indexPath.row]
             StorageManager.deleteObject(place)
@@ -54,7 +58,7 @@ class MainTableViewController: UITableViewController {
     
   
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let size = CGFloat(80)
         return size
     }
@@ -72,7 +76,7 @@ class MainTableViewController: UITableViewController {
         guard let newPlaceVc = segue.source as? NewPlaceTableViewController else { return }
         newPlaceVc.savePlace()
 //        places.append(newPlaceVc.newPlace!)
-        tableView.reloadData()
+        tableView?.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
