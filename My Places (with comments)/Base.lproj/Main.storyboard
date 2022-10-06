@@ -241,7 +241,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-OY-Oxe" customClass="Ma">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-OY-Oxe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -269,6 +269,9 @@
                             <constraint firstItem="zSD-MA-XrH" firstAttribute="trailing" secondItem="PZL-QV-LnB" secondAttribute="trailing" constant="40" id="wp5-qI-mhJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Z67-OY-Oxe" id="LnR-gr-ybY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdx-Tl-255" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
