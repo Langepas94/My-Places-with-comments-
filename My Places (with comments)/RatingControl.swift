@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import RealmSwift
+import Cosmos
 @IBDesignable class RatingControl: UIStackView {
     var rating = 0 {
         didSet {

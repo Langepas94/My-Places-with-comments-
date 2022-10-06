@@ -7,9 +7,9 @@
 
 import UIKit
 import RealmSwift
+import Cosmos
 
-
-class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+@IBDesignable class MainTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let searchController = UISearchController(searchResultsController: nil)
     private var places: Results<Place>!
@@ -51,23 +51,16 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableCell
-     var place = Place()
+ 
          
-         if isFiltering {
-             place = filteredPlaces[indexPath.row]
-         } else {
-             place = places[indexPath.row]
-         }
-        
+         let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
+         
         cell.nameLabel.text = place.name
         cell.TypeLabel.text = place.type
         cell.LocationLabel.text = place.location
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
-
 //        cell.imageOfPlace.image = UIImage(named: places[indexPath.row].restorantImage!)
-        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
-        cell.imageOfPlace.clipsToBounds = true
-
+         cell.cosmosView.rating = place.rating
         return cell
     }
     
@@ -137,12 +130,8 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filteredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+           
+            let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
             let newPlaceVc = segue.destination as! NewPlaceTableViewController
             newPlaceVc.currentPlace = place
         }

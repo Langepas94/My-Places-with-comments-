@@ -21,6 +21,7 @@
 		446DAE7D28EC72C9003062A2 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7B28EC72C9003062A2 /* Realm.xcframework */; };
 		446DAE7E28EC72C9003062A2 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446DAE7C28EC72C9003062A2 /* RealmSwift.xcframework */; };
 		446DAE8028EC8FC3003062A2 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DAE7F28EC8FC3003062A2 /* StorageManager.swift */; };
+		4476DCC628EF50D300BCD87E /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 4476DCC528EF50D300BCD87E /* Cosmos */; };
 		44BE2D7428EB672C00B835CA /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE2D7328EB672C00B835CA /* NewPlaceTableViewController.swift */; };
 		44D37AD728EB2DD30082A693 /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD628EB2DD30082A693 /* CustomTableCell.swift */; };
 		44D37AD928EB3F320082A693 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D37AD828EB3F320082A693 /* PlaceModel.swift */; };
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4476DCC628EF50D300BCD87E /* Cosmos in Frameworks */,
 				446DAE7A28EC719B003062A2 /* libcompression.tbd in Frameworks */,
 				446DAE7D28EC72C9003062A2 /* Realm.xcframework in Frameworks */,
 				446DAE7E28EC72C9003062A2 /* RealmSwift.xcframework in Frameworks */,
@@ -129,6 +131,9 @@
 			dependencies = (
 			);
 			name = "My Places (with comments)";
+			packageProductDependencies = (
+				4476DCC528EF50D300BCD87E /* Cosmos */,
+			);
 			productName = "My Places (with comments)";
 			productReference = 4406F1F228E81FAF0050F159 /* My Places (with comments).app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 4406F1E928E81FAF0050F159;
+			packageReferences = (
+				4476DCC428EF50D300BCD87E /* XCRemoteSwiftPackageReference "Cosmos" */,
+			);
 			productRefGroup = 4406F1F328E81FAF0050F159 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -412,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4476DCC428EF50D300BCD87E /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4476DCC528EF50D300BCD87E /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4476DCC428EF50D300BCD87E /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4406F1EA28E81FAF0050F159 /* Project object */;
 }

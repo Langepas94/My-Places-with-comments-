@@ -6,23 +6,24 @@
 //
 
 import UIKit
+import Cosmos
 
 class NewPlaceTableViewController: UITableViewController {
     var currentPlace: Place!
     var imageIsChanged = false
+    var currentRating = 0.0
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var placeImage: UIImageView!
-    
+    @IBOutlet weak var cosmosSecondView: CosmosView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         // тут настройка футера чтобы убрать нижнюю полосу
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
@@ -30,6 +31,10 @@ class NewPlaceTableViewController: UITableViewController {
         setupNavigationBar()
         setupLabelOfNavigationController()
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        cosmosSecondView.settings.fillMode = .half
+        cosmosSecondView.didTouchCosmos = { rating in
+            self.currentRating = rating
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -77,7 +82,7 @@ class NewPlaceTableViewController: UITableViewController {
         
         let imageData = image?.pngData()
         
-        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData, rating: Double(ratingControl.rating))
+        let newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, imageData: imageData, rating: currentRating)
         if currentPlace != nil{
             try! realm.write {
                 currentPlace?.name = newPlace.name
@@ -150,7 +155,7 @@ extension NewPlaceTableViewController {
             placeType.text = currentPlace?.type
             placeName.text = currentPlace?.name
             placeLocation.text = currentPlace?.location
-            ratingControl.rating = Int(currentPlace.rating)
+            cosmosSecondView.rating = currentPlace.rating
         }
     }
     
