@@ -20,7 +20,7 @@ class NewPlaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // тут настройка футера чтобы убрать нижнюю полосу
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         setupEditScreen()
