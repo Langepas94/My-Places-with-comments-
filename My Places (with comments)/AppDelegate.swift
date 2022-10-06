@@ -6,14 +6,23 @@
 //
 
 import UIKit
-
+import RealmSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 1 {
+                    // Rename the "age" property to "yearsSinceBirth".
+                    // The renaming operation should be done outside of calls to `enumerateObjects(ofType: _:)`.
+                    
+                }
+            })
+        Realm.Configuration.defaultConfiguration = config
         return true
     }
 
