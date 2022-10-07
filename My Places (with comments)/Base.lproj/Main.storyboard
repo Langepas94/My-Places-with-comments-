@@ -335,7 +335,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y08-jM-jCz">
-                                                    <rect key="frame" x="95" y="35" width="315" height="18"/>
+                                                    <rect key="frame" x="95" y="35" width="157" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="M8y-Ra-FVB"/>
                                                     </constraints>
@@ -374,10 +374,10 @@
                                             <constraints>
                                                 <constraint firstItem="Y08-jM-jCz" firstAttribute="leading" secondItem="Hoe-et-ZCb" secondAttribute="trailing" constant="15" id="5Fx-xw-dvT"/>
                                                 <constraint firstItem="Hoe-et-ZCb" firstAttribute="leading" secondItem="RvQ-QR-z5K" secondAttribute="leading" constant="15" id="7uM-jp-1hL"/>
+                                                <constraint firstItem="MLo-HR-4lr" firstAttribute="leading" secondItem="Y08-jM-jCz" secondAttribute="trailing" constant="22" id="Ghi-zk-nPX"/>
                                                 <constraint firstItem="aR9-PJ-hsf" firstAttribute="leading" secondItem="Hoe-et-ZCb" secondAttribute="trailing" constant="15" id="K5B-dI-ZPx"/>
                                                 <constraint firstItem="Hoe-et-ZCb" firstAttribute="centerY" secondItem="RvQ-QR-z5K" secondAttribute="centerY" id="Lpp-f9-Xug"/>
                                                 <constraint firstItem="JP7-1g-uaq" firstAttribute="leading" secondItem="Hoe-et-ZCb" secondAttribute="trailing" constant="15" id="MIq-he-HPD"/>
-                                                <constraint firstItem="Y08-jM-jCz" firstAttribute="trailing" secondItem="RvQ-QR-z5K" secondAttribute="trailingMargin" constant="16" id="ZAd-eb-kG8"/>
                                                 <constraint firstItem="JP7-1g-uaq" firstAttribute="top" secondItem="RvQ-QR-z5K" secondAttribute="top" constant="9" id="eaP-mO-nDC"/>
                                                 <constraint firstItem="aR9-PJ-hsf" firstAttribute="top" secondItem="Y08-jM-jCz" secondAttribute="bottom" constant="3" id="jgm-Nk-lOJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="aR9-PJ-hsf" secondAttribute="trailing" constant="20" symbolic="YES" id="k5F-QX-GSL"/>
