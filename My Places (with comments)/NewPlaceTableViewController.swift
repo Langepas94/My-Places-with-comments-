@@ -106,7 +106,10 @@ class NewPlaceTableViewController: UITableViewController {
             return
         }else {
             let mapVC = segue.destination as! MapVCViewController
-            mapVC.place = currentPlace
+            mapVC.place.name = placeName.text!
+            mapVC.place.location = placeLocation.text
+            mapVC.place.type = placeLocation.text
+            mapVC.place.imageData = placeImage.image?.pngData()
         }
     }
     
